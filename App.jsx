@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, TouchableOpacity, StatusBar } from 'react-native'
 import React, { Component } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -6,13 +6,24 @@ export default class App extends Component {
   render() {
     return (
       <View style={{ flex:1, backgroundColor:'#f4f4f4' }}>
-      <View style={{ flex:1, backgroundColor:'#0082f7',marginBottom:60,marginHorizontal:10, marginTop:10, borderRadius:5 }}>
-        <View style={{ marginTop:10 }}>
-          <Icon name="chevron-back" size={25} color="#ffffff" />
-        </View>
-        <View style={{ marginBottom:20 }}>
-          <Text style={{ marginTop:40, marginLeft:50 }}>Trello app redesaign</Text>
-          <Text style={{  marginLeft:50 }}>Design Team</Text>
+      <View style={{ flex:1 }}>
+        <View style={{ backgroundColor:"#0082f7" }}>
+          <StatusBar barStyle='dark-content' backgroundColor={'#0082f7'}/>
+          <View style={{ flexDirection:'row' }}>
+          <TouchableOpacity style={{ justifyContent:'center' , marginTop:50,marginLeft:10}}>
+          <Icon name="chevron-back-outline" size={45} color="#bdbdbd" />
+          </TouchableOpacity>
+          <Text style={{ justifyContent:'center',alignItems:'center', marginTop:60, color:'#bdbdbd',fontSize:20, flex:1}}>Trello App</Text>
+          <TouchableOpacity style={{ marginRight:10 }}>
+            <Icon name="search-outline" size={35} color="#bdbdbd" marginTop={57} />
+          </TouchableOpacity>
+          <TouchableOpacity style={{ marginRight:10 }}>
+            <Icon name="notifications-outline" size={35} color="#bdbdbd" marginTop={57} />
+          </TouchableOpacity>
+          <TouchableOpacity style={{ marginRight:10 }}>
+            <Icon name="ellipsis-vertical-outline" size={30} color="#bdbdbd" marginTop={57} />
+          </TouchableOpacity>
+          </View>
         </View>
       </View>
         <View style={{ flexDirection:'row', backgroundColor:'#ffffff',paddingTop:10, elevation:3,paddingBottom:10 }}>
