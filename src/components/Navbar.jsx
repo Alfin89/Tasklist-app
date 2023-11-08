@@ -1,6 +1,7 @@
 import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
 import React, { Component } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 const Navbar = () => {
@@ -11,7 +12,7 @@ const Navbar = () => {
             <Text style={{ fontSize:12, color:'#bdbdbd',fontWeight:'bold' }}>Home</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ justifyContent:'center',alignItems:'center',flex:1 }}>
-            <Icon name="add-circle" size={30} color="#bdbdbd" />
+            <Icon name="add-circle" size={25} color="#bdbdbd" />
             <Text style={{ fontSize:12, color:'#bdbdbd',fontWeight:'bold' }}>Tambah</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ justifyContent:'center',alignItems:'center',flex:1 }}>
