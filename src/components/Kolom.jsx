@@ -1,76 +1,99 @@
-import { Text, StyleSheet, View, TouchableOpacity, Image } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { View, Text, FlatList, StyleSheet, Dimensions } from 'react-native';
 
+const screenWidth = Dimensions.get('window').width;
 
-const Kolom = () => {
-    return (
-        <View style={{ width:400,height:670, backgroundColor:'#F1F1F1', borderRadius:10, marginLeft:10, marginTop:10 ,elevation:3}}>
-         <View style={{ marginTop:30,marginHorizontal:10 }}>
-           <Text style={{ fontSize:20, color:'#000000' }}>Need to do</Text>
-           <View style={{ flexDirection:'row-reverse',marginTop:-25 }}>
-           <TouchableOpacity>
-             <Icon name="chevron-down-circle-outline" size={25} color="#bdbdbd" />
-           </TouchableOpacity>
-           </View>
-           <View style={{ width:380,height:100, backgroundColor:'#F4F4F4', borderRadius:10,  marginTop:10,elevation:3}}>
-             <View style={{ width:70,height:15, backgroundColor:'#DC3535', borderRadius:10,  marginTop:10,elevation:3, marginLeft:10}}></View>
-             <Text style={{ color:'#000000',marginLeft:10 }}>To Do Research</Text>
-             <View style={{marginTop:25,marginLeft:7,flexDirection:'row',}}>
-              <Icon name="time-outline" size={30} color="#bdbdbd" />
-                <Text style={{ color:'#000000', marginTop:8,fontWeight:"bold" }}>16 dec </Text>
-              </View>
-              <View style={{ justifyContent:'center',alignItems:'flex-end' }}>
-                <Image source={require('../assets/image/img.jpeg' )} style={{ width:25,height:25,borderRadius:50 ,marginBottom:190, marginRight:20 }}/>
-              </View>
-           </View>
-           <View style={{ width:380,height:100, backgroundColor:'#F4F4F4', borderRadius:10,  marginTop:20,elevation:3}}>
-             <View style={{ width:70,height:15, backgroundColor:'#FF6C22', borderRadius:10,  marginTop:10,elevation:3, marginLeft:10}}></View>
-             <Text style={{ color:'#000000',marginLeft:10 }}> Create Project</Text>
-             <View style={{marginTop:25,marginLeft:7,flexDirection:'row',}}>
-              <Icon name="time-outline" size={30} color="#bdbdbd" />
-                <Text style={{ color:'#000000', marginTop:8,fontWeight:"bold" }}>16 dec </Text>
-              </View>
-              <View style={{ justifyContent:'center',alignItems:'flex-end' }}>
-                <Image source={require('../assets/image/img.jpeg' )} style={{ width:25,height:25,borderRadius:50 ,marginBottom:190, marginRight:20 }}/>
-              </View>
-           </View>
-           <View style={{ width:380,height:100, backgroundColor:'#F4F4F4', borderRadius:10,  marginTop:20,elevation:3}}>
-             <View style={{ width:70,height:15, backgroundColor:'#FF9209', borderRadius:10,  marginTop:10,elevation:3, marginLeft:10}}></View>
-             <Text style={{ color:'#000000',marginLeft:10, }}>Create  Prototypes</Text>
-             <View style={{marginTop:25,marginLeft:7,flexDirection:'row',}}>
-              <Icon name="time-outline" size={30} color="#bdbdbd" />
-                <Text style={{ color:'#000000', marginTop:8, fontWeight:"bold" }}>16 dec </Text>
-              </View>
-              <View style={{ justifyContent:'center',alignItems:'flex-end' }}>
-                <Image source={require('../assets/image/img.jpeg' )} style={{ width:25,height:25,borderRadius:50 ,marginBottom:190, marginRight:20 }}/>
-              </View>
-           </View>
-           <View style={{ width:380,height:100, backgroundColor:'#F4F4F4', borderRadius:10,  marginTop:20,elevation:3}}>
-             <View style={{ width:70,height:15, backgroundColor:'#005B41', borderRadius:10,  marginTop:10,elevation:3, marginLeft:10}}></View>
-             <Text style={{ color:'#000000',marginLeft:10 }}>Create Desaign Concept</Text>
-             <View style={{marginTop:25,marginLeft:7,flexDirection:'row',}}>
-              <Icon name="time-outline" size={30} color="#bdbdbd" />
-                <Text style={{ color:'#000000', marginTop:8,fontWeight:"bold" }}>16 dec </Text>
-              </View>
-              <View style={{ justifyContent:'center',alignItems:'flex-end' }}>
-                <Image source={require('../assets/image/img.jpeg' )} style={{ width:25,height:25,borderRadius:50 ,marginBottom:190, marginRight:20 }}/>
-              </View>
-           </View>
-           <View style={{ width:380,height:100, backgroundColor:'#F4F4F4', borderRadius:10,  marginTop:20,elevation:3}}>
-             <View style={{ width:70,height:15, backgroundColor:'#008170', borderRadius:10,  marginTop:10,elevation:3, marginLeft:10}}></View>
-             <Text style={{ color:'#000000',marginLeft:10 }}>Discus Concept With Team</Text>
-             <View style={{marginTop:25,marginLeft:7,flexDirection:'row',}}>
-              <Icon name="time-outline" size={30} color="#bdbdbd" />
-                <Text style={{ color:'#000000', marginTop:8,fontWeight:"bold" }}>16 dec </Text>
-              </View>
-              <View style={{ justifyContent:'center',alignItems:'flex-end' }}>
-                <Image source={require('../assets/image/img.jpeg' )} style={{ width:25,height:25,borderRadius:50 ,marginBottom:190, marginRight:20 }}/>
-              </View>
-           </View>
-         </View>
-        </View>
-    );
-}
+const data = [
+  {
+    key: '1', 
+    title: 'To Do Research',
+    color: '#DC3535',
+    time: 'Desember',
+    image: ''
+  },
+  {
+    key: '2', 
+    title: 'Create Project',
+    color: '#FF6C22',
+    time: 'Desember',
+    image: ''
+  },
+  {
+    key: '3', 
+    title: 'Create Prototypes',
+    color: '#FF9209',
+    time: 'Desember',
+    image: ''
+  },
+  {
+    key: '4', 
+    title: 'Create Design Concept',
+    color: '#005B41',
+    time: 'Desember',
+    image: ''
+  },
+  {
+    key: '5', 
+    title: 'Discuss Concept With Team',
+    color: '#008170',
+    time: 'Desember',
+    image: ''
+  },
+  {
+    key: '6', 
+    title: 'Discuss Concept With Team',
+    color: '#008170',
+    time: 'Desember',
+    image: ''
+  },
+];
 
-export default Kolom;
+const Item = ({ title, color, time }) => (
+  <View style={[styles.item, { backgroundColor: '#ffffff', width: screenWidth - 20, margin: 10 }]}>
+    <Text style={styles.itemText}>{title}</Text>
+    <View style={styles.ViewIcon}>
+      <Icon style={styles.Icontime} name="time-outline" size={20} color="#bdbdbd" />
+      <Text style={{color : '#000000', position: 'absolute', bottom : -35, left: 33,}}>{time}</Text>
+    </View>
+  </View>
+);
+
+const YourComponent = () => {
+  return (
+    <FlatList
+      data={data}
+      renderItem={({ item }) => (
+        <Item title={item.title} color={item.color} time={item.time} />
+      )}
+      keyExtractor={(item) => item.key}
+    />
+  );
+};
+
+const styles = StyleSheet.create({
+  item: {
+    height: 100,
+    backgroundColor: '#F4F4F4',
+    borderRadius: 10,
+    elevation: 3,
+    justifyContent: 'center',
+  },
+  itemText: {
+    color: '#000000',
+    fontSize: 16,
+    marginLeft : 10,
+  },
+  ViewIcon: {
+    flexDirection: 'row', 
+    position : 'relative',
+    alignItems: 'center',
+  },
+  Icontime: {
+    marginLeft: 10,
+    position : 'absolute',
+    bottom : -35,
+  },
+});
+
+export default YourComponent;
