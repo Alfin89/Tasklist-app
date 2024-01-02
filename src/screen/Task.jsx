@@ -12,25 +12,61 @@ class Task extends Component {
     render() {
         return (
             <View>
-               <Text style={{ color:'#000000' , marginHorizontal:20,marginTop:10,fontWeight:"bold"}}>Masukan Judul</Text>
-               <View style={{ marginHorizontal:20,marginTop:2, borderRadius:10, backgroundColor:'grey'}}>
+               <Text style={styles.judul}>Masukan Judul</Text>
+               <View style={styles.TextInputJudul}>
                 <TextInput placeholder='Masukan Judul anda'/>
                </View>
-               <Text style={{ color:'#000000' , marginHorizontal:20,marginTop:10,fontWeight:"bold"}}>Masukan Judul</Text> 
-               <View style={{ marginHorizontal:20,marginVertical:5, borderRadius:10, backgroundColor:'grey' }}>
+               <Text style={styles.TextJudul}>Masukan Judul</Text> 
+               <View style={styles.TextInputContent}>
                 <TextInput placeholder='Masukan Content Anda'/>
                </View> 
-               <View style={{backgroundColor:"grey",marginHorizontal:20,height:50}}>
-                <Text style={{ textAlign:'center',paddingVertical:10 }}>tambah</Text>
+               <View style={styles.ButtonTambah}>
+                <Text style={styles.TextTambah}>tambah</Text>
                </View>
             </View>
         );
     }
 }
 
-const task = StyleSheet.create({
+const styles = StyleSheet.create({
+    judul:{
+        color:'#000000' , 
+        marginHorizontal:20,
+        marginTop:10,
+        fontWeight:"bold"
+    },
+    TextInputJudul:{
+        marginHorizontal:20,
+        marginTop:2,
+        borderRadius:10,
+        backgroundColor:'grey'
+    },
+    TextJudul:{
+        color:'#000000' , 
+        marginHorizontal:20,
+        marginTop:10,
+        fontWeight:"bold"
+    },
+    TextInputContent:{
+        marginHorizontal:20,
+        marginVertical:5, 
+        borderRadius:10, 
+        backgroundColor:'grey'
+    },
+    ButtonTambah:{
+        backgroundColor:"grey",
+        marginHorizontal:20,
+        height:50,
+        marginTop:80,
+    },
+    TextTambah:{
+        textAlign:'center',
+        paddingVertical:1,
+        fontSize:30
+
+    },
 
 
-})
+});
 
 export default Task;
